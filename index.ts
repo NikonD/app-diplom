@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 app.use(express.static(join(__dirname, "..", "build")));
 app.use('/static', express.static(join(__dirname, 'client', 'build', 'static')));
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/*', (req: Request, res: Response) => {
   res.sendFile( join(__dirname, 'client', 'build', 'index.html'))
 });
 

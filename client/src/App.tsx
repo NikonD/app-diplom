@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Breadcrumb, Layout, Menu, theme, Row, Col } from 'antd';
-import {Signup} from './components/login/login'
+import { Signup } from './components/pages/login/login'
+import { MenuPanel } from './components/menu/Menu';
+import { Tasks } from './components/pages/tasks';
+import { Students } from './components/pages/students/students';
 
 const { Header, Content, Footer } = Layout;
 
@@ -22,16 +25,8 @@ const App: React.FC = () => {
             background: 'rgba(255, 255, 255, 0.2)',
           }}
         />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={new Array(3).fill(null).map((_, index) => ({
-            key: String(index + 1),
-            label: `nav ${index + 1}`,
-          }))}
-        />
-        
+        <MenuPanel />
+
       </Header>
       <Content className="site-layout" style={{ padding: '0 50px' }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
@@ -41,13 +36,12 @@ const App: React.FC = () => {
         </Breadcrumb>
         <Row>
           <Col span={12} offset={6}>
-            
-         
-                <Signup/>
-                {/* <Route path='/signup' element={<Login/>}/>
-                <Route path='/' element={<p>MAIN</p>} /> */}
-          
-
+            <Routes>
+              <Route path='/' element={<Tasks />} />
+              <Route path='/students' element={<Students/>} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/signin' element={<div></div>} />
+            </Routes>
           </Col>
         </Row>
       </Content>
