@@ -110,3 +110,8 @@
 .login-form .ant-btn {
   width: 100%;
 }
+
+.site-layout {
+  max-width: 1600px;
+  margin: 10px 150px;
+}

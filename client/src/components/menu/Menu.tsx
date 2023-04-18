@@ -5,9 +5,12 @@ import { Menu } from 'antd';
 
 const items: MenuProps['items'] = [
   {
-    label: 'Navigation One',
-    key: 'mail',
-    icon: <MailOutlined />,
+    label:
+      <a href="/" rel="noopener noreferrer">
+        Главная
+      </a>,
+    key: 'main',
+    // icon: <MailOutlined />,
   },
   {
     label: 'Navigation Two',
@@ -68,7 +71,7 @@ const MenuPanel: React.FC = () => {
     setCurrent(e.key);
   };
 
-  return <Menu onClick={onClick} selectedKeys={[current]} style={{background: '#d9dfeb'}} mode="horizontal" items={items} />;
+  return <Menu onClick={onClick} selectedKeys={[current]} style={{ background: '#d9dfeb' }} mode="horizontal" items={items} />;
 };
 
-export {MenuPanel};
+export { MenuPanel };
