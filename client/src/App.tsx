@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Breadcrumb, Layout, Menu, theme, Row, Col, Space } from 'antd';
-import { Signup } from './components/pages/login/login'
+import { Signup } from './components/pages/login/signup'
 import { MenuPanel } from './components/menu/Menu';
 import { Tasks } from './components/pages/tasks';
 import { Students } from './components/pages/students/students';
@@ -9,6 +9,7 @@ import { TaskPage } from './components/pages/tasks/taskPage';
 import { StudentPage } from './components/pages/students/studentPage';
 import Link from 'antd/es/typography/Link';
 import './App.css'
+import { Signin } from './components/pages/login/signin';
 
 const { Header, Content, Footer } = Layout;
 
@@ -28,7 +29,7 @@ const App: React.FC = () => {
 
   return (
     <Layout>
-      <Header style={{ position: 'sticky', top: 0, zIndex: 1, width: '100%' }}>
+      <Header style={{ position: 'sticky', top: 0, zIndex: 1, width: '100%', background: '#d9dfeb' }}>
         <div
           style={{
             float: 'left',
@@ -56,7 +57,7 @@ const App: React.FC = () => {
               <Route path='/students' element={<Students />} />
               <Route path='/students/:id' element={<StudentPage />} />
               <Route path='/signup' element={<Signup />} />
-              <Route path='/signin' element={<div></div>} />
+              <Route path='/signin' element={<Signin />} />
             </Routes>
           </Col>
         </Row>

@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
+import { Col, MenuProps, Row, Space } from 'antd';
 import { Menu } from 'antd';
+
+const loginItems: MenuProps['items'] = [
+  {
+    key: 'login',
+    label: <a href='/signin' rel="noopener noreferrer">
+      Войти
+    </a>
+  },
+  {
+    key: 'register',
+    label: <a href='/signup' rel="noopener noreferrer">
+      Создать аккаунт
+    </a>
+  }
+]
 
 const items: MenuProps['items'] = [
   {
@@ -64,14 +79,23 @@ const items: MenuProps['items'] = [
 ];
 
 const MenuPanel: React.FC = () => {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('main');
 
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
     setCurrent(e.key);
   };
 
-  return <Menu onClick={onClick} selectedKeys={[current]} style={{ background: '#d9dfeb' }} mode="horizontal" items={items} />;
+  return (
+    <Row>
+      <Col span={12}>
+        <Menu onClick={onClick} selectedKeys={[current]} style={{ background: '#d9dfeb' }} mode="horizontal" items={items} />
+      </Col>
+      <Col flex={"auto"} offset={6} span={6}>
+        <Menu onClick={onClick} selectedKeys={[current]} style={{ background: '#d9dfeb' }} mode="horizontal" items={loginItems} />
+      </Col>
+    </Row>
+  )
 };
 
 export { MenuPanel };
