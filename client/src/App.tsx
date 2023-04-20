@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Breadcrumb, Layout, Menu, theme, Row, Col, Space } from 'antd';
+import { Breadcrumb, Layout, Menu, theme, Row, Col, Space, Divider } from 'antd';
 import { Signup } from './components/pages/login/signup'
 import { MenuPanel } from './components/menu/Menu';
 import { Tasks } from './components/pages/tasks';
@@ -15,10 +15,11 @@ const { Header, Content, Footer } = Layout;
 
 let Home = () => {
   return (
-    <Space>
+    <>
       <Link href='/tasks'>Tasks</Link>
       <Link href='/students'>Students</Link>
-    </Space>
+    </>
+
   )
 }
 
@@ -42,14 +43,16 @@ const App: React.FC = () => {
         <MenuPanel />
 
       </Header>
-      <Content className="site-layout" style={{ padding: '0 50px' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
+      <Content className="site-layout" style={{ padding: '0 50px', }}>
+
         <Row>
-          <Col span={12} offset={6}>
+          <Col className='content-background' span={12} offset={6}>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>List</Breadcrumb.Item>
+              <Breadcrumb.Item>App</Breadcrumb.Item>
+            </Breadcrumb>
+            <Divider type="horizontal"/>
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/tasks' element={<Tasks />} />

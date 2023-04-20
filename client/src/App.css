@@ -112,6 +112,7 @@
 }
 
 .site-layout {
-  /* max-width: 1600px;
-  margin: 10px 150px; */
+    margin: auto;
+    max-width: 1200px;
+    background: #fff;
 }
