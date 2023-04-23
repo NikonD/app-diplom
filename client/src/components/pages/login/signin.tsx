@@ -1,9 +1,18 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
+import axios from 'axios';
 
 const Signin: React.FC = () => {
   const onFinish = (values: any) => {
+    axios({
+      url: '/api/signin',
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      data: values
+    })
     console.log('Received values of form: ', values);
   };
 
@@ -15,8 +24,8 @@ const Signin: React.FC = () => {
       onFinish={onFinish}
     >
       <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Please input your Username!' }]}
+        name="email"
+        rules={[{ required: true, type: "email", message: 'Please input your Username!' }]}
       >
         <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
       </Form.Item>
@@ -50,4 +59,4 @@ const Signin: React.FC = () => {
   );
 };
 
-export {Signin};
+export { Signin };

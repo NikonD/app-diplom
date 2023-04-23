@@ -1,20 +1,20 @@
-import { config } from "dotenv";
-import { Knex } from "knex";
-import { Pool, QueryResult } from "pg";
+import * as config from "../../config/db_config.json"
+import { Sequelize } from "sequelize";
+import { initModels as publicInitModels } from "./init-models";
 
-config()
 
-const pool = new Pool()
+// @ts-ignore
+const sequelize = new Sequelize({
+    dialect: config.dialect,
+    host: config.host,
+    username: config.username,
+    password: config.password,
+    database: config.database,
+    logging: config.logging,
+});
 
-const knex = require('knex')({
-  client: 'pg',
-  connection: {
-    host: process.env.PGHOST,
-    port: parseInt(process.env.PGPORT as string),
-    user: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    database: process.env.PGDATABASE,
-  }
-})
+const models = publicInitModels(sequelize);
 
-export {knex, pool}
+
+
+export {Sequelize, sequelize, models};

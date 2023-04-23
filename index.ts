@@ -3,12 +3,12 @@ import dotenv from 'dotenv';
 import { mainRoutes } from './src/routes/main';
 import { join } from 'path';
 import bodyParser from 'body-parser';
-
+import config from './config/config.json'
 dotenv.config();
 
 
 const app: Express = express();
-const port = process.env.PORT;
+const port = config.PORT;
 
 app.use(bodyParser({extended: true}))
 app.use(bodyParser.json())
