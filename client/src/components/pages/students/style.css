@@ -3,6 +3,10 @@
   text-decoration-color: black;
 }
 
+.student_meta > img {
+  width: 64px;
+}
+
 .student-name {
   margin-top: 0px;
 }

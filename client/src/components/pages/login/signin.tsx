@@ -4,7 +4,7 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import axios from 'axios';
 
 const Signin: React.FC = () => {
-  const onFinish = (values: any) => {
+  const onFinish = async (values: any) => {
     axios({
       url: '/api/signin',
       method: 'POST',
@@ -12,6 +12,10 @@ const Signin: React.FC = () => {
         "Content-Type": "application/json"
       },
       data: values
+    }).then(response => {
+      if (response.data && !response.data.err) {
+        window.location.href = '/'
+      }
     })
     console.log('Received values of form: ', values);
   };
@@ -25,35 +29,35 @@ const Signin: React.FC = () => {
     >
       <Form.Item
         name="email"
-        rules={[{ required: true, type: "email", message: 'Please input your Username!' }]}
+        // rules={[{ required: true, type: "email", message: 'Please input your Username!' }]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="E-mail" />
       </Form.Item>
       <Form.Item
         name="password"
-        rules={[{ required: true, message: 'Please input your Password!' }]}
+        // rules={[{ required: true, message: 'Please input your Password!' }]}
       >
         <Input
           prefix={<LockOutlined className="site-form-item-icon" />}
           type="password"
-          placeholder="Password"
+          placeholder="Пароль"
         />
       </Form.Item>
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
+          <Checkbox>Запомнить меня</Checkbox>
         </Form.Item>
 
         <a className="login-form-forgot" href="">
-          Forgot password
+          Забыл пароль
         </a>
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
+          Логин
         </Button>
-        Or <a href="">register now!</a>
+        <a href="">Регистрация</a>
       </Form.Item>
     </Form>
   );

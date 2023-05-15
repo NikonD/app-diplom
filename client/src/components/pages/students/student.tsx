@@ -7,18 +7,7 @@ const { Meta } = Card;
 
 const Student: React.FC = () => (
   <Card
-    style={{ width: 300 }}
-    cover={
-      <img
-        alt="example"
-        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-      />
-    }
-    actions={[
-      <SettingOutlined key="setting" />,
-      <EditOutlined key="edit" />,
-      <EllipsisOutlined key="ellipsis" />,
-    ]}
+    style={{ width: 200 }}
   >
     <Link to={'/students/1'}>
       <Meta

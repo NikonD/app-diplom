@@ -163,7 +163,7 @@ const Signup: React.FC = () => {
 
       <Form.Item
         name="password"
-        label="Password"
+        label="Пароль"
         rules={[
           {
             required: true,
@@ -177,7 +177,7 @@ const Signup: React.FC = () => {
 
       <Form.Item
         name="confirm"
-        label="Confirm Password"
+        label="Подтвердите пароль"
         dependencies={['password']}
         hasFeedback
         rules={[
@@ -200,7 +200,7 @@ const Signup: React.FC = () => {
 
       <Form.Item
         name="fullname"
-        label="Full name"
+        label="Полное имя"
         tooltip="What do you want others to call you?"
         rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
       >
@@ -209,7 +209,7 @@ const Signup: React.FC = () => {
 
       <Form.Item
         name="phone"
-        label="Phone Number"
+        label="Номер телефона"
         rules={[{ required: true, message: 'Please input your phone number!' }]}
       >
         <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
@@ -217,8 +217,8 @@ const Signup: React.FC = () => {
 
       <Form.Item
         name="organization"
-        label="Organization"
-        rules={[{ required: true, message: 'Please input website!' }]}
+        label="Организация"
+        // rules={[{ required: true, message: 'Please input website!' }]}
       >
         <AutoComplete options={websiteOptions} onChange={onWebsiteChange} placeholder="website">
           <Input />
@@ -227,8 +227,8 @@ const Signup: React.FC = () => {
 
       <Form.Item
         name="intro"
-        label="Intro"
-        rules={[{ required: true, message: 'Please input Intro' }]}
+        label="Описаниие организации"
+        // rules={[{ required: true, message: 'Please input Intro' }]}
       >
         <Input.TextArea showCount maxLength={100} />
       </Form.Item>
@@ -244,18 +244,18 @@ const Signup: React.FC = () => {
         ]}
         {...tailFormItemLayout}
       >
-        <Checkbox>
+        {/* <Checkbox>
           I have read the <a href="">agreement</a>
-        </Checkbox>
+        </Checkbox> */}
       </Form.Item>
 
-      <Form.Item>
+      {/* <Form.Item>
         <Link href='/some'>Я овошЪ</Link>
-      </Form.Item>
+      </Form.Item> */}
 
       <Form.Item {...tailFormItemLayout}>
         <Button type="primary" htmlType="submit">
-          Register
+          Зарегистрироваться
         </Button>
       </Form.Item>
     </Form>

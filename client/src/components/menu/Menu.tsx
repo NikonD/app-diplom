@@ -28,13 +28,13 @@ const items: MenuProps['items'] = [
     // icon: <MailOutlined />,
   },
   {
-    label: 'Navigation Two',
+    label: 'Портфолио',
     key: 'app',
     icon: <AppstoreOutlined />,
     disabled: true,
   },
   {
-    label: 'Navigation Three - Submenu',
+    label: 'Отчеты',
     key: 'SubMenu',
     icon: <SettingOutlined />,
     children: [
@@ -68,14 +68,7 @@ const items: MenuProps['items'] = [
       },
     ],
   },
-  {
-    label: (
-      <a href="/" target="_blank" rel="noopener noreferrer">
-        Navigation Four - Link
-      </a>
-    ),
-    key: 'alipay',
-  },
+  
 ];
 
 const MenuPanel: React.FC = () => {

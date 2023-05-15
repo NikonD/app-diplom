@@ -5,7 +5,7 @@ import { Student } from './student'
 
 const Students: React.FC = () => {
   return (
-    <Row gutter={[60, 24]}>
+    <Row gutter={[100, 50]}>
       <Col span={8} ><Student/></Col>
       <Col span={8} ><Student/></Col>
       <Col span={8} ><Student/></Col>

@@ -9,18 +9,14 @@ const { Meta } = Card;
 const Task: React.FC = () => (
 
   <Card
-    style={{ width: 300 }}
+    className='task_card'
+    style={{ width: 200 }}
     cover={
       <img
         alt="example"
         src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
       />
     }
-    actions={[
-      <SettingOutlined key="setting" />,
-      <EditOutlined key="edit" />,
-      <EllipsisOutlined key="ellipsis" />,
-    ]}
   >
     <Link to={'/tasks/2'}>
       <Meta

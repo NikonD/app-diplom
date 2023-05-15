@@ -10,6 +10,7 @@ import { StudentPage } from './components/pages/students/studentPage';
 import Link from 'antd/es/typography/Link';
 import './App.css'
 import { Signin } from './components/pages/login/signin';
+import { Employer } from './components/pages/emoloyer/indes';
 
 const { Header, Content, Footer } = Layout;
 
@@ -47,18 +48,19 @@ const App: React.FC = () => {
 
         <Row>
           <Col className='content-background' span={12} offset={6}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
+            {/* <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>Главная</Breadcrumb.Item>
+              <Breadcrumb.Item>Задания</Breadcrumb.Item>
               <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb>
-            <Divider type="horizontal"/>
+            </Breadcrumb> */}
+            <Divider type="horizontal" />
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/tasks' element={<Tasks />} />
               <Route path='/tasks/:id' element={<TaskPage />} />
               <Route path='/students' element={<Students />} />
               <Route path='/students/:id' element={<StudentPage />} />
+              <Route path='/employers/:id' element={<Employer />} />
               <Route path='/signup' element={<Signup />} />
               <Route path='/signin' element={<Signin />} />
             </Routes>
