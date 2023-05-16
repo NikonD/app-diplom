@@ -23,7 +23,7 @@ router.route('/signin').post(async (req: Request, res: Response) => {
     }
 
     if (await bcrypt.compareSync(values.password, user?.password as string)) {
-      let _user = {id: user?.id, name: user?.fullname, role: user?.type, verify: user?.verify}
+      let _user = { id: user?.id, name: user?.fullname, role: user?.type, verify: user?.verify }
       req.session.user = _user
       res.json(req.session.user)
       // res.json({ type: 'success', user: { id: user?.id, name: user?.fullname }, token: token })
@@ -68,4 +68,15 @@ router.route('/signup').post(async (req, res) => {
   }
 })
 
-export {router}
+
+router.route('/user').post(async (req: Request, res: Response) => {
+  try {
+    res.json(req.session.user)
+  }
+  catch (e: any) {
+    res.json({err: (e as Error).message})
+  }
+  
+})
+
+export { router }
