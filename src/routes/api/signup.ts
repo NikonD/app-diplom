@@ -36,7 +36,7 @@ router.route('/signin').post(async (req: Request, res: Response) => {
     console.log((e as Error).message)
     res.json({
       type: 'error',
-      message: 'server error'
+      message: 'server error',
     })
   }
 
@@ -74,7 +74,7 @@ router.route('/user').post(async (req: Request, res: Response) => {
     res.json(req.session.user)
   }
   catch (e: any) {
-    res.json({err: (e as Error).message})
+    res.json({err: (e as Error)})
   }
   
 })

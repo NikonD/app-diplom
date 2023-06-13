@@ -1,20 +1,14 @@
+import { useQuery } from "@apollo/client"
 import axios from "axios"
+import { useState } from "react"
+import { USER } from "../components/gqls/users"
 
-let useUser = async () => {
-  let response = await axios({
-    method: "POST",
-    url: '/api/user',
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
+export const useUser = () => {
 
-  if (!response?.data?.err) {
-    return response.data
-  } else {
-    return {login: false}
-  }
-  
+
+  const {data, error, loading} = useQuery(USER.session)
+  console.log(error)
+  console.log("USER", data?.session)
+
+  return data? data?.session: {}
 }
-
-export {useUser}

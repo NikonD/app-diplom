@@ -11,6 +11,8 @@ import Link from 'antd/es/typography/Link';
 import './App.css'
 import { Signin } from './components/pages/login/signin';
 import { Employer } from './components/pages/emoloyer/indes';
+import { Pages } from './components/pages/pages';
+import { CreateTask } from './components/pages/tasks/createTask/CreateTask';
 
 const { Header, Content, Footer } = Layout;
 
@@ -44,7 +46,7 @@ const App: React.FC = () => {
         <MenuPanel />
 
       </Header>
-      <Content className="site-layout" style={{ padding: '0 50px', }}>
+      <Content className="site-layout" style={{ padding: '0 50px', height: "calc(100vh - 60px - 48px)" }}>
 
         <Row>
           <Col className='content-background' span={12} offset={6}>
@@ -63,11 +65,15 @@ const App: React.FC = () => {
               <Route path='/employers/:id' element={<Employer />} />
               <Route path='/signup' element={<Signup />} />
               <Route path='/signin' element={<Signin />} />
+
+              <Route path='/pages' element={<Pages/>} />
+            
+              <Route path='/tasks/add' element={<CreateTask/>}/>
             </Routes>
           </Col>
         </Row>
       </Content>
-      <Footer style={{ textAlign: 'center', position: 'sticky', bottom: 0 }}>Ant Design ©2023 Created by Ant UED</Footer>
+      <Footer style={{ textAlign: 'center'}}>Разработанно групой АПО-19: Долгушиным, Семейниковым, Суендыковым</Footer>
     </Layout>
   );
 };

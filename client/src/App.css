@@ -113,6 +113,15 @@
 
 .site-layout {
     margin: 0px 300px;
+    height: max-content;
     max-width: 1200px;
     background: #fff;
+}
+
+.task_tags {
+  margin-top: 10px;
+}
+
+.student_tags {
+  margin-top: 10px;
 }

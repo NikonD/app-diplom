@@ -1,76 +1,45 @@
-import React from "react"
-import { Card, Col, Divider, Image, Row, Badge, Space, Tag, Typography } from "antd"
-import Link from "antd/es/typography/Link"
-// import './style.css'
-const { Paragraph, Title, Text } = Typography
+import React, { useState } from 'react';
+import { Avatar, Button, Divider, Row, Space, Switch, Tag, Typography } from 'antd';
+// import { Link } from 'react-router-dom';
+import { FileOutlined, StarFilled, StarOutlined} from '@ant-design/icons'
+import { useUser } from '../../../helpers/useUser';
+const { Paragraph, Text, Title, Link} = Typography;
 
+const Employer: React.FC = () => {
+  const [ellipsis, setEllipsis] = useState(true);
 
-let Employer: React.FC = () => {
   return (
     <>
+      <Title level={3}>ИП PROFit</Title>
       <Row>
-        <Col span={12}>
-          <Paragraph>
-            8(777)777-77-77<br />
-            nikon9nikon@gmail.com<br />
-            <Link href="https://t.me/nekonb">telegram</Link>
-          </Paragraph>
-          <Paragraph>
-            СКО, г. Петропавловск
-          </Paragraph>
-
-        </Col>
-
-        <Col span={6}>
-
-          <Title className="student-name" level={1}>Имя</Title>
-
-          <Text>
-            <Paragraph>
-              ТОО "что то там"
-            </Paragraph>
-            <Paragraph>
-              Разработка и сопровождение ПО....
-            </Paragraph>
-          </Text>
-        </Col>
-
-        <Col span={6} >
-          <Image width={128} src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
-        </Col>
-
+        <StarFilled style={{color: "#FFA200"}}/>
+        <StarFilled style={{color: "#FFA200"}}/>
+        <StarFilled style={{color: "#FFA200"}}/>
+        <StarFilled style={{color: "#FFA200"}}/>
+        <StarOutlined/>
       </Row>
-      <Row>
-        {/* <Col span={12}>
-          <Divider>Ключевые навыки</Divider>
-          <Space size={[0, 8]} wrap>
-            <Tag><Text type="warning">4</Text> C++</Tag>
-            <Tag><Text type='success'>5</Text> C# </Tag>
-          </Space>
+      <Title level={5}>Здравствуй, уважаемый соискатель</Title>
 
-          <Divider>Образование</Divider>
-          <Paragraph>НАО СКУ им М. Козыбаева</Paragraph>
+      <Paragraph >
+        Наша компания занимаемся разработкой и сопровождением информационных систем. Команда наших специалистов делает отличные информационные системы для медицины (и не только), делает мобильные приложения, сайты и многое другое.
+        Мы постоянно находимся в поисках людей, которые хотят развивать или совершенствовать свои навыки в сфере IT. Наш офис находится в центре г. Петропавловск около драмтеатра по адресу Сутюшева 16а.
 
-          <Divider>Знание языков</Divider>
-          <Space direction="vertical" size={[0, 8]} wrap>
-            <Text>Русский</Text>
-            <Text>Казахский - А1</Text>
-          </Space>
-        </Col> */}
-        <Col offset={6} span={6}>
-          <Divider>Статистика</Divider>
-          <Space direction="vertical" size={16}>
-            <Card>
-              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }} > <Text type="warning">4</Text> Исполнитель </Space></p>
-              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }}> <Text type="success">192</Text> Card content </Space></p>
-              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }}> <Text type="success">90</Text> Card content </Space></p>
-            </Card>
-          </Space>
-        </Col>
-      </Row>
-      <Divider>Открытые задания</Divider>
+        У нас:
+
+        отличные условия для работы сотрудников;
+        интересные проекты;
+        достойная оплата.
+        Смотри наши вакансии, и присоединяйся к нашей команде!
+
+        С уважением, ИП "PROFIT", ТОО "Антис-Мед". г. Петропавловск Казахстан
+      </Paragraph>
+
+      <Link href='/tasks'>Перейти к опубликованным заданиями</Link>
+
+      
+
     </>
-  )
-}
+  );
+};
 
-export { Employer }
+export { Employer };

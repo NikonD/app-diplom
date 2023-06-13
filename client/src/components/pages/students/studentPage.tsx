@@ -56,17 +56,17 @@ const StudentPage = () => {
 
           <Divider>Знание языков</Divider>
           <Space direction="vertical" size={[0, 8]} wrap>
-            <Text>Русский</Text>
+            <Text>Русский - носитель</Text>
             <Text>Казахский - А1</Text>
           </Space>
         </Col>
         <Col offset={6} span={6}>
           <Divider>Статистика</Divider>
           <Space direction="vertical" size={16}>
-            <Card>
-              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }} > <Text type="warning">4</Text> Исполнитель </Space></p>
-              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }}> <Text type="success">192</Text> Card content </Space></p>
-              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }}> <Text type="success">90</Text> Card content </Space></p>
+            <Card style={{padding: '5px', width:'200px'}}>
+
+              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }} > <Text type="warning">4</Text> Рейтинг </Space></p>
+              <p> <Space direction="horizontal" style={{ width: '100%', justifyContent: 'space-between' }}> <Text type="success">192</Text> Выполненно </Space></p>
             </Card>
           </Space>
         </Col>
@@ -74,49 +74,44 @@ const StudentPage = () => {
       <Divider>Портфолио</Divider>
       <Row gutter={[60, 40]}>
         <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-          <Badge.Ribbon text="Hippies">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно">
+            <Card title={`от ИП PROFit`} size="small" color="green">
+              Разработка веб приложения.
             </Card>
           </Badge.Ribbon>
-          <Badge.Ribbon text={
-            <div>
-              Hippies <br />
-              Happy
-            </div>
-          } color="pink">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно" color="green">
+            <Card title={`от ИП PROFit`} size="small">
+              Разработка веб приложения.
             </Card>
           </Badge.Ribbon>
-          <Badge.Ribbon text="Hippies" color="red">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно" color="green">
+            <Card title={`от ИП PROFit`} size="small">
+              Разработка веб приложения.
             </Card>
           </Badge.Ribbon>
-          <Badge.Ribbon text="Hippies" color="cyan">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно" color="green">
+            <Card title={`от ИП PROFit`} size="small">
+              Доработка сайта на WordPress
             </Card>
           </Badge.Ribbon>
-          <Badge.Ribbon text="Hippies" color="green">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно" color="green">
+            <Card title={`от ИП PROFit`} size="small">
+              Доработка сайта на WordPress
             </Card>
           </Badge.Ribbon>
-          <Badge.Ribbon text="Hippies" color="purple">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно" color="green">
+            <Card title={`от ИП PROFit`} size="small">
+              Доработка сайта на WordPress
             </Card>
           </Badge.Ribbon>
-          <Badge.Ribbon text="Hippies" color="volcano">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно" color="green">
+            <Card title={`от ИП PROFit`} size="small">
+              Создания мобильного приложения
             </Card>
           </Badge.Ribbon>
-          <Badge.Ribbon text="Hippies" color="magenta">
-            <Card title="Pushes open the window" size="small">
-              and raises the spyglass.
+          <Badge.Ribbon text="Выполненно" color="green">
+            <Card title={`от ИП PROFit`} size="small">
+              Создания мобильного приложения
             </Card>
           </Badge.Ribbon>
         </Space>

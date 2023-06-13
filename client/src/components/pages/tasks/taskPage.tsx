@@ -1,42 +1,24 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Avatar, Button, Divider, Row, Space, Switch, Tag, Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import { FileOutlined } from '@ant-design/icons'
+import { FileOutlined, StarFilled, StarOutlined } from '@ant-design/icons'
+import { useUser } from '../../../helpers/useUser';
 const { Paragraph, Text, Title } = Typography;
 
 const TaskPage: React.FC = () => {
   const [ellipsis, setEllipsis] = useState(true);
+  const [userState, setUserState] = useState({});
 
+  let user = useUser()
+
+  console.log("USER in taskPage", user)
   return (
     <>
-
-      <Title level={3}>Задание какое-то</Title>
-
-      {/* <Paragraph ellipsis={ellipsis ? { rows: 2, expandable: true, symbol: 'more' } : false}>
-        Ant Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team.
-      </Paragraph> */}
-      <Paragraph >
-        Ant Design, a design language for background TaskPagelications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team.
-      </Paragraph>
+      <Title level={3}>Wordprress-специалист</Title>
 
       <Paragraph >
-        Ant Design, a design language for background TaskPagelications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team.
+        В поисках специалиста (студии), которая возьмет на себя пул задач по разработке сайтов на Wordpress. Полное ведение клиента:- Оценка брифа- Финализация ТЗ- Дизайн, верстка, разработка Обязательные условия:- Наличие специализированных модулей- Работа через Безопасную СделкуСвой ответ начните с указания текущей даты.
       </Paragraph>
 
       <Divider type="horizontal">Файлы</Divider>
@@ -53,16 +35,16 @@ const TaskPage: React.FC = () => {
       <Row>
         <Divider type="horizontal">Компитенции</Divider>
         <Space direction="horizontal">
-          <Tag>C++</Tag>
-          <Tag>C##</Tag>
-          <Tag>что то еще</Tag>
+          <Tag>HTML</Tag>
+          <Tag>PHP</Tag>
+          <Tag>Wordpress</Tag>
         </Space>
       </Row>
 
       <Row>
         <Divider>Заказчик</Divider>
         <Avatar
-          size={{sm: 20 }}
+          size={{ sm: 20 }}
           src="https://xsgames.co/randomusers/avatar.php?g=pixel"
         />
         <Space direction="vertical">

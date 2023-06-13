@@ -7,6 +7,10 @@ import config from './config/config.json'
 import session from 'express-session';
 import passport from 'passport';
 import { UUID } from 'crypto';
+import { ApolloServer } from 'apollo-server-express';
+import { schema } from './src/graphql/scheme';
+import { resolver } from './src/graphql/resolver';
+import { graphqlHTTP } from 'express-graphql';
 dotenv.config();
 
 declare module 'express-session' {
@@ -21,6 +25,25 @@ declare module 'express-session' {
 }
 
 const app: Express = express();
+
+const apolloServerIntance = new ApolloServer({
+  schema: schema,
+  rootValue: resolver,
+  formatError: (formattedError) => {
+    return {
+      message: "Incorrect response"
+    }
+  },
+  debug: true,
+  context: ({req}) => {
+    const token = req.get('XTOKEN')
+  }
+})
+apolloServerIntance.start().then(()=>{
+  apolloServerIntance.applyMiddleware({app, cors: false})
+})
+
+
 const port = config.PORT;
 
 app.set('trust proxy', 1) // trust first proxy
@@ -35,8 +58,11 @@ app.use(session({
   } 
 }));
 
-
-
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  rootValue: resolver,
+  graphiql: true
+}))
 
 app.use(passport.initialize())
 app.use(passport.session())
