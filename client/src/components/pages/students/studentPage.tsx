@@ -26,7 +26,7 @@ const StudentPage = () => {
 
         <Col span={6}>
 
-          <Title className="student-name" level={1}>Имя</Title>
+          <Title className="student-name" level={1}>Олег Олегов</Title>
 
           <Text>
             <Paragraph>
@@ -87,31 +87,6 @@ const StudentPage = () => {
           <Badge.Ribbon text="Выполненно" color="green">
             <Card title={`от ИП PROFit`} size="small">
               Разработка веб приложения.
-            </Card>
-          </Badge.Ribbon>
-          <Badge.Ribbon text="Выполненно" color="green">
-            <Card title={`от ИП PROFit`} size="small">
-              Доработка сайта на WordPress
-            </Card>
-          </Badge.Ribbon>
-          <Badge.Ribbon text="Выполненно" color="green">
-            <Card title={`от ИП PROFit`} size="small">
-              Доработка сайта на WordPress
-            </Card>
-          </Badge.Ribbon>
-          <Badge.Ribbon text="Выполненно" color="green">
-            <Card title={`от ИП PROFit`} size="small">
-              Доработка сайта на WordPress
-            </Card>
-          </Badge.Ribbon>
-          <Badge.Ribbon text="Выполненно" color="green">
-            <Card title={`от ИП PROFit`} size="small">
-              Создания мобильного приложения
-            </Card>
-          </Badge.Ribbon>
-          <Badge.Ribbon text="Выполненно" color="green">
-            <Card title={`от ИП PROFit`} size="small">
-              Создания мобильного приложения
             </Card>
           </Badge.Ribbon>
         </Space>
